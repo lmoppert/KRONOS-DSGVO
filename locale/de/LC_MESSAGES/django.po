@@ -1,0 +1,126 @@
+# Translations for GDPR application
+# Copyright (C) 2018 KRONOS TITAN GmbH
+# Lutz Moppert <lutz.moppert@kronosww.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-16 10:25+0000\n"
+"PO-Revision-Date: 2018-05-15 13:59+0200\n"
+"Last-Translator: Lutz Moppert <lutz.moppert@kronosww.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: DSGVO/settings.py:120
+msgid "German"
+msgstr "Deutsch"
+
+#: DSGVO/settings.py:121
+msgid "English"
+msgstr "Englisch"
+
+#: templates/base.html:58
+msgid "Administration"
+msgstr "Administration"
+
+#: vvt/models.py:8
+msgid "Category of affected individuals"
+msgstr "Kategorie von betroffenen Personen"
+
+#: vvt/models.py:14
+msgid "Person Category"
+msgstr "Kategorie von betroffenen Personen"
+
+#: vvt/models.py:15
+msgid "Person Categories"
+msgstr "Kategorien von betroffenen Personen"
+
+#: vvt/models.py:20 vvt/models.py:82
+msgid "Categories of personal data"
+msgstr "Kategorie von personenbezogenen Daten"
+
+#: vvt/models.py:26
+msgid "Data Category"
+msgstr "Kategorie von personenbezogenen Daten"
+
+#: vvt/models.py:27
+msgid "Data Categories"
+msgstr "Kategorien von personenbezogenen Daten"
+
+#: vvt/models.py:32 vvt/models.py:84
+msgid "Categories of recipients"
+msgstr "Kategorien von Empfängern"
+
+#: vvt/models.py:38
+msgid "Recipient Category"
+msgstr "Kategorie von Empfängern"
+
+#: vvt/models.py:39
+msgid "Recipient Categories"
+msgstr "Kategorien von Empfängern"
+
+#: vvt/models.py:43 vvt/models.py:49 vvt/models.py:60 vvt/models.py:77
+msgid "Department"
+msgstr "Abteilung"
+
+#: vvt/models.py:50
+msgid "Departments"
+msgstr "Abteilungen"
+
+#: vvt/models.py:55 vvt/models.py:66
+msgid "Contact"
+msgstr "Kontakt"
+
+#: vvt/models.py:56
+msgid "Email"
+msgstr "E-Mail"
+
+#: vvt/models.py:58
+msgid "Phone"
+msgstr "Telefon"
+
+#: vvt/models.py:67
+msgid "Contacts"
+msgstr "Kontakte"
+
+#: vvt/models.py:73 vvt/models.py:98
+msgid "Processing Activity"
+msgstr "Verarbeitungstätigkeit"
+
+#: vvt/models.py:74
+msgid "Created on"
+msgstr "Datum der Einführung "
+
+#: vvt/models.py:75
+msgid "Changed on"
+msgstr "Datum der letzten Änderung"
+
+#: vvt/models.py:78
+msgid "Reason"
+msgstr "Zweck der Verarbeitung"
+
+#: vvt/models.py:80
+msgid "Categories of affected individuals"
+msgstr "Kategorien von betroffenen Personen"
+
+#: vvt/models.py:85
+msgid "Transfer to third countries"
+msgstr "Transfer in Drittländer"
+
+#: vvt/models.py:86
+msgid "Transfer warrant"
+msgstr "Geeignete Garantien"
+
+#: vvt/models.py:88
+msgid "Retention period"
+msgstr "Löschfritsten"
+
+#: vvt/models.py:89
+msgid "Order processors"
+msgstr "Auftragsverarbeiter"
+
+#: vvt/models.py:99
+msgid "Processing Activities"
+msgstr "Verarbeitungstätigkeiten"

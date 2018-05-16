@@ -1,0 +1,105 @@
+html body {
+    background-color: #e3e6ea;
+}
+html body #main  {
+    background-color: #fff;
+    color: #555;
+    padding: 30px 0;
+}
+body #main h1 {
+    font-size: 30px;
+    font-weight: bold;
+    background: url(../img/titlebg.png) bottom left repeat-x;
+    padding: 0 0 10px;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+body #main h1 small {
+    color: #999;
+}
+body #main h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+body #main .slot-tables td a {
+    font-weight: 600;
+}
+body #footer a, body #main a {
+    color: #0e509c;
+}
+body #footer a:hover, body #main a:hover {
+    color: #8dc73f;
+}
+#header {
+    background: #04397d;
+}
+#header .navbar {
+    margin: 0 auto;
+    max-width: 1140px;
+    max-height: 50px;
+}
+#header .navbar-brand {
+    padding: 0;
+    margin-right: 40px;
+    max-height: 50px;
+}
+#header .navbar .nav-item a {
+    color: #eee;
+}
+#header .navbar .nav-item a#stationDropdown {
+    font-weight: bold;
+}
+#header .navbar .nav-item a.btn-light,
+#header .navbar .nav-item a:focus.btn-light,
+#header .navbar .nav-item a:hover.btn-light {
+    color: #04397d;
+}
+#header .navbar .nav-item .dropdown-menu a {
+    color: #04397d;
+}
+#footer {
+    margin: 0;
+    position: relative;
+    clear: both;
+    color: #3f4f61;
+    width: 100%;
+    border-top: 1px solid #a8b4c1;
+    background: #e3e6ea;
+    padding: 5px 50px 20px;
+}
+#footer .content {
+    margin: 15px auto;
+    max-width: 1100px;
+    background: url(../img/footerlogo.png) top left no-repeat;
+    font-size: 12px;
+    display: block;
+    padding: 20px 0 20px 100px;
+}
+#footer ul {
+    padding:0;
+    border:0;
+    margin:0;
+}
+#footer ul li:first-child {
+    border-left: 0 none;
+    padding-left: 0;
+}
+#footer ul li {
+    float: left;
+    list-style-image: none;
+    list-style-position: inside;
+    list-style-type: none;
+    border-left: 1px solid #0e509c;
+    padding: 0 5px;
+}
+form#login label,
+form#login button  {
+    display: block;
+    margin: 25px 0;
+}
+form#login input {
+    display: block;
+    min-width: 300px;
+}
+

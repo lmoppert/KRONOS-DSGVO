@@ -1,0 +1,44 @@
+<!-- -*- engine:django -*- -->
+
+{% extends "base.html" %}
+{% load admin_urls %}
+
+{% block base_content %}
+<h1>Verzeichnis der Verarbeitungstätigkeiten</h1>
+
+<table class="table table-striped table-bordered table-hover table-sm">
+    <thead>
+        <tr>
+            <th>Links</th>
+            <th>Verarbeitungstätigkeit</th>
+            <th>Fachabteilung</th>
+            <th>Verantwortlich</th>
+            <th>Erstellt am</th>
+            <th>Geändert am</th>
+        </tr>
+    </thead>
+
+    {% for object in object_list %}
+    <tr>
+        <th>
+            <a href="{{ object.get_absolute_url }}" class="mr-2">
+                <span class="fas fa-file-pdf" title="PDF"></span>
+            </a>
+            <a href="{% url vvt|admin_urlname:'change' object.pk %}">
+                <span class="fas fa-edit" title="Edit"></span>
+            </a>
+        </th><th>
+            {{ object }}
+        </th><td>
+            {{ object.contact.department }}
+        </td><td>
+            {{ object.contact.name }}
+        </td><td>
+            {{ object.created }}
+        </td><td>
+            {{ object.changed }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

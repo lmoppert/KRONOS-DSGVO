@@ -1,0 +1,87 @@
+{% autoescape on %}
+\documentclass[DIV14, 11pt, DIN, a4paper]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{eurosym}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+
+% This has to be the last package in the list
+\usepackage[
+    pdftitle={Verzeichnis von Verarbeitungstätigkeiten},
+    pdfauthor={Generated with Django},
+    pdfcreator={PDFLaTeX},
+    pdfproducer={TeXlive},
+    colorlinks, 
+    hyperindex,
+    %pdfpagelayout=TwoPageRight,
+    urlcolor=MidnightBlue, 
+    linkcolor=MidnightBlue]{hyperref}
+
+\title{Verarbeitungstätigkeit: \\ {{ object.name }} }
+\date{
+  \begin{minipage}[t]{\textwidth}
+    \begin{tabular}{ll}
+      Datum der Einführung: \hspace{3 cm} & Datum der letzten Änderung: \\
+      {{ object.created }}  & {{ object.changed }} \\
+    \end{tabular}
+  \end{minipage}
+}
+
+\begin{document}
+  \maketitle
+
+  \section{Verantwortliche Fachabteilung}
+  \textbf{ {{ object.contact.department }} } \vspace{.35 cm}
+
+  \begin{tabular}{ll}
+    \multicolumn{2}{l}{ {{ object.contact.name }} } \\
+    E-Mail: & {{ object.contact.email }} \\
+    Telefon: & {{ object.contact.phone }} \\
+  \end{tabular}
+  
+  \section{Zweck der Verarbeitung}
+  {{ object.reason }}
+
+  \section{Kategorien betroffener Personen}
+    \begin{itemize}
+      \setlength{\itemsep}{0pt}
+      {% for x in object.person_categories.all %}
+        \item {{ x.name }}
+      {% endfor %}
+    \end{itemize}
+
+  \section{Kategorien von personenbezogenen Daten}
+    \begin{itemize}
+      \setlength{\itemsep}{0pt}
+      {% for x in object.data_categories.all %}
+        \item {{ x.name }}
+      {% endfor %}
+    \end{itemize}
+
+  \section{Kategorien von Empfängern}
+    \begin{itemize}
+      \setlength{\itemsep}{0pt}
+      {% for x in object.recipient_categories.all %}
+        \item {{ x.name }}
+      {% endfor %}
+    \end{itemize}
+
+  \section{Übermittlung an Drittstaaten}
+  {{ object.transfer }}
+
+  \section{Geeignete Garantien}
+  {{ object.transfer_warrant }}
+
+  \section{Löschfristen}
+  {{ object.retention }}
+
+  \section{Auftragsverarbeiter}
+  {{ object.processors }}
+
+\end{document}
+{% endautoescape %}
