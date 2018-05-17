@@ -30,7 +30,10 @@ def pa_as_pdf(request, pk):
 
 
 class IndexView(generic.ListView):
-    model=models.ProcessingActivity
+    model = models.ProcessingActivity
+
+    def get_queryset(self):
+        return self.model.objects.filter(active=True)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

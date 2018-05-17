@@ -40,7 +40,8 @@ class RecipientCategory(models.Model):
 
 
 class Department(models.Model):
-    name = models.CharField(max_length=50, verbose_name=_("Department"))
+    name = models.CharField(
+        max_length=50, verbose_name=_("Department"))
 
     def __str__(self):
         return self.name
@@ -52,12 +53,14 @@ class Department(models.Model):
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=50, verbose_name=_("Contact"))
-    email = models.CharField(max_length=50, verbose_name=_("Email"),
-                             blank=True, )
-    phone = models.CharField(max_length=50, verbose_name=_("Phone"), blank=True)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE,
-                                   verbose_name=_("Department"))
+    name = models.CharField(
+        max_length=50, verbose_name=_("Contact"))
+    email = models.CharField(
+        max_length=50, verbose_name=_("Email"), blank=True, )
+    phone = models.CharField(
+        max_length=50, verbose_name=_("Phone"), blank=True)
+    department = models.ForeignKey(
+        Department, on_delete=models.CASCADE, verbose_name=_("Department"))
 
     def __str__(self):
         return ("{} ({})".format(self.name, self.department))
@@ -71,22 +74,32 @@ class Contact(models.Model):
 class ProcessingActivity(models.Model):
     name = models.CharField(
         max_length=200, verbose_name=_("Processing Activity"))
-    created = models.DateField(auto_now_add=True, verbose_name=_("Created on"))
-    changed = models.DateField(auto_now=True, verbose_name=_("Changed on"))
-    contact = models.ForeignKey(Contact, on_delete=models.CASCADE,
-                                   verbose_name=_("Department"))
-    reason = models.TextField(verbose_name=_("Reason"))
+    created = models.DateField(
+        auto_now_add=True, verbose_name=_("Created on"))
+    changed = models.DateField(
+        auto_now=True, verbose_name=_("Changed on"))
+    active = models.BooleanField(
+        default=True, verbose_name=_("Active"))
+    contact = models.ForeignKey(
+        Contact, on_delete=models.CASCADE, verbose_name=_("Department"))
+    reason = models.TextField(
+        verbose_name=_("Reason"))
     person_categories = models.ManyToManyField(
         PersonCategory, verbose_name=_("Categories of affected individuals"))
     data_categories = models.ManyToManyField(
         DataCategory, verbose_name=_("Categories of personal data"))
     recipient_categories = models.ManyToManyField(
         RecipientCategory, verbose_name=_("Categories of recipients"))
-    transfer = models.TextField(verbose_name=_("Transfer to third countries"))
-    transfer_warrant = models.TextField(verbose_name=_("Transfer warrant"))
+    transfer = models.BooleanField(
+        default=False, verbose_name=_("Transfer"))
+    transfer_recipient = models.TextField(
+        blank=True, verbose_name=_("Transfer recipient"))
+    transfer_warrant = models.TextField(
+        blank=True, verbose_name=_("Transfer warrant"))
     retention = models.CharField(
         max_length=200, verbose_name=_("Retention period"))
-    processors = models.TextField(verbose_name=_("Order processors"))
+    processors = models.TextField(
+        blank=True, verbose_name=_("Order processors"))
 
     def __str__(self):
         return self.name

@@ -12,13 +12,11 @@
 
 % This has to be the last package in the list
 \usepackage[
-    pdftitle={Verzeichnis von Verarbeitungstätigkeiten},
-    pdfauthor={Generated with Django},
-    pdfcreator={PDFLaTeX},
-    pdfproducer={TeXlive},
+    pdftitle={ {{ object.name }} },
+    pdfauthor={KRONOS TITAN GmbH},
+    pdfcreator={Django and PDFLaTeX},
     colorlinks, 
     hyperindex,
-    %pdfpagelayout=TwoPageRight,
     urlcolor=MidnightBlue, 
     linkcolor=MidnightBlue]{hyperref}
 
@@ -72,10 +70,17 @@
     \end{itemize}
 
   \section{Übermittlung an Drittstaaten}
-  {{ object.transfer }}
+  {% if object.transfer %}
+    Die Daten werden an Empfänger in nicht EU Staaten übermittelt.
 
-  \section{Geeignete Garantien}
-  {{ object.transfer_warrant }}
+    \subsection{Datenempfänger}
+    {{ object.transfer_recipient }}
+
+    \subsection{Geeignete Garantien}
+    {{ object.transfer_warrant }}
+  {% else %}
+    Eine Datenübermittlung findet nicht statt und ist auch nicht geplant 
+  {% endif %}
 
   \section{Löschfristen}
   {{ object.retention }}
